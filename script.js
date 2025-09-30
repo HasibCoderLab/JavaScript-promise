@@ -50,15 +50,20 @@ const asynFunc1 = () => {
 const asynFunc2 = () => {
     return  new Promise((resolve, reject) => {
           setTimeout(() => {
-              console.log("data1");
+              console.log("data2");
             resolve("Success");
           }, 4000);
       })
   }
 console.log("Fetching Data1...........");
 
-let p1 =  asynFunc1();
-p1.then((res) =>{
+ asynFunc1().then((res) =>{{
     console.log(res);
-    
-})
+    console.log("Fetching Data2...........");
+    asynFunc2().then((res) =>{
+        console.log(res);
+        
+    })
+ }})
+
+
