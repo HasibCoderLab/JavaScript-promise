@@ -18,21 +18,47 @@
 // }
 
 // =====================| 3rd Example |==============
-const getPromise = () =>{
-    return new Promise ((resolve , reject ) => {
+const getPromise = () => {
+    return new Promise((resolve, reject) => {
         console.log("I'ma   Promise");
         resolve("success");
-    //     setTimeout(() => {
-    //     reject("netwark Err"); 
-    //     }, 2000);
-     });
+        //     setTimeout(() => {
+        //     reject("netwark Err"); 
+        //     }, 2000);
+    });
 }
 let promise = getPromise();
-promise.then((res) =>{
-    console.log("Promise Fulfild" ,res);
-    
+promise.then((res) => {
+    console.log("Promise Fulfild", res);
+
 });
-promise.catch((err) =>{
-    console.log("Rejected" , err);
+promise.catch((err) => {
+    console.log("Rejected", err);
+
+});
+
+// =====================| 4th Example |==============
+const asynFunc1 = () => {
+  return  new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("data1");
+          resolve("Success");
+        }, 4000);
+    })
+};
+
+const asynFunc2 = () => {
+    return  new Promise((resolve, reject) => {
+          setTimeout(() => {
+              console.log("data1");
+            resolve("Success");
+          }, 4000);
+      })
+  }
+console.log("Fetching Data1...........");
+
+let p1 =  asynFunc1();
+p1.then((res) =>{
+    console.log(res);
     
 })
