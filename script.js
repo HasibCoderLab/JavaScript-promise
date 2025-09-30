@@ -22,13 +22,17 @@ const getPromise = () =>{
     return new Promise ((resolve , reject ) => {
         console.log("I'ma   Promise");
         resolve("success");
-        // setTimeout(() => {
-        // reject("netwark Err"); 
-        // }, 2000);
-    });
+    //     setTimeout(() => {
+    //     reject("netwark Err"); 
+    //     }, 2000);
+     });
 }
 let promise = getPromise();
 promise.then((res) =>{
     console.log("Promise Fulfild" ,res);
+    
+});
+promise.catch((err) =>{
+    console.log("Rejected" , err);
     
 })
